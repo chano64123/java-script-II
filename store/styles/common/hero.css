@@ -1,0 +1,32 @@
+section {
+    height: 340px;
+}
+
+#hero {
+    border: 1px solid purple;
+    height: 340px;
+    background: url("../../assets/hero_bg.png");
+    background-size: cover;
+    background-position: top center;
+}
+
+#hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.title-container span {
+    display: block;
+    color: white;
+    font-weight: 700px;
+}
+
+.title-container span:first-child {
+    font-size: 40px;
+}
+
+.title-container span:last-child {
+    font-size: 100px;
+    line-height: 80px;
+}

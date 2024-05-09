@@ -1,0 +1,44 @@
+body,
+html {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilo para el riel de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+    background: #aeb1ab; /* Color de fondo del riel */
+    border-radius: 10px; /* Redondea los bordes del riel */
+}
+
+/* Estilo para el pulgar de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+    background: #696c6d; /* Color del pulgar */
+    border-radius: 10px; /* Redondea los bordes del pulgar */
+}
+
+/* Estilo para el pulgar de la barra de desplazamiento al pasar el ratón sobre él */
+::-webkit-scrollbar-thumb:hover {
+    background: #292274; /* Cambia el color del pulgar al pasar el ratón sobre él */
+}
+
+.container {
+    max-width: 1220px;
+    margin: 0 auto;
+    height: inherit;
+    min-height: inherit;
+}
+
+.columns-container {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1rem;
+}

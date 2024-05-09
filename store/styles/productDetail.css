@@ -1,0 +1,185 @@
+/*#region Detalle*/
+main {
+    height: auto;
+}
+
+.product-images-block {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    max-width: 100%;
+    overflow: hidden;
+    grid-template-rows: 45px 45px 45px;
+    gap: 5px;
+}
+
+.product-images-block .thumbnail-container {
+    grid-column: 1;
+    margin: 5px;
+    height: auto;
+}
+
+.product-images-block .thumbnail-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center center;
+}
+
+.product-images-block .main-image {
+    width: 100%;
+    grid-row: 1/5;
+    grid-column: 2/5;
+}
+
+.product-images-block,
+.product-description-block,
+.product-checkout-block {
+    flex: 1;
+}
+
+.product-description-block .title {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+    word-wrap: break-word;
+}
+
+.product-description-block .selector {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Estilos del campo de etiqueta */
+.product-description-block .selector .label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.checkout-container {
+    background-color: #ebebeb;
+    padding: 33px;
+    border-radius: 4px;
+}
+
+.checkout-total-label {
+    color: #ff3b3c;
+}
+
+.checkout-total-price {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.checkout-description {
+    line-height: 20.4px;
+    word-wrap: break-word;
+}
+
+.checkout-policy-list {
+    list-style-type: none;
+    margin-bottom: 30px;
+}
+
+.checkout-policy-list li {
+    display: flex;
+    margin: 15px 0;
+}
+
+.checkout-policy-list li .policy-icon {
+    margin-right: 15px;
+}
+
+.checkout-process .top {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.checkout-process .top input {
+    height: 40px;
+    width: 62px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    padding: 0 10px 0 20px;
+    box-sizing: border-box;
+}
+
+.btn-primary {
+    width: 100%;
+    height: 40px;
+    background: #ff3b3c;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+}
+
+.btn-outline {
+    width: 100%;
+    height: 40px;
+    color: #ff3b3c;
+    font-weight: bold;
+    border: 1px solid #ff3b3c;
+    border-radius: 12px;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.recommended-product-label {
+    color: #ff3b3c;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* Estilos del campo de selección */
+#color {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilos para cuando el campo de selección está enfocado */
+#color:focus {
+    border-color: #eee;
+    box-shadow: 0 0 5px rgba(118, 119, 120, 0.5);
+}
+
+/* Estilos para las opciones del select */
+option {
+    padding: 8px;
+    font-size: 16px;
+}
+
+/* Estilos para cuando el cursor está sobre las opciones del select */
+option:hover {
+    background-color: #f2f2f2;
+}
+
+/* Estilos del fieldset */
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+    font-family: Arial, sans-serif; /* Cambia la fuente según tu preferencia */
+    font-size: 16px; /* Ajusta el tamaño del texto según sea necesario */
+    line-height: 1.5; /* Espacio entre líneas */
+    color: #333; /* Color del texto */
+    background-color: #f9f9f9; /* Color de fondo */
+    padding: 15px; /* Añade espaciado interno */
+    border-radius: 5px; /* Redondea los bordes */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+    margin-bottom: 20px; /* Espacio entre cada descripción */
+}
+/*#endregion */
