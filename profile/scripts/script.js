@@ -25,10 +25,9 @@ const contenidoPerfil = `
 
 perfilSelector.innerHTML = contenidoPerfil;
 
-//* Parte 03
-console.warn("PARTE 03")
-const printTemplate = (id) => {
-  id = id ?? 'template3';
+//* Parte 04
+console.warn("PARTE 04")
+const printTemplate = (id = 'template3') => {
   const preSelector = document.getElementById(id);
   preSelector.innerHTML = contenidoPerfil;
 }
