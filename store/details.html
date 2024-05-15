@@ -12,9 +12,8 @@
         <link rel="stylesheet" href="styles/productDetail.css" />
         <link rel="stylesheet" href="styles/products.css" />
 
-        <script src="script/layouts.js" defer></script>
-        <script src="script/products.js" defer></script>
-        <script src="script/productDetail.js" defer></script>
+        <script src="script/layouts.js" type="module" defer></script>
+        <script src="script/productDetail.js" type="module" defer></script>
         <title>Tienda Virtual</title>
     </head>
     <body>
@@ -37,55 +36,13 @@
             <div class="container">
                 <div class="columns-container">
                     <div class="product-images-block" id="product-images"></div>
+                    <div class="product-description-block" id="product-description"></div>
                     <div class="product-checkout-block" id="product-checkout"></div>
                 </div>
                 <div class="sales-block">
                     <h3 class="recommended-product-label">Productos que regalamos</h3>
                     <div class="container">
-                        <div class="product-container">
-                            <article class="product-card">
-                                <a class="product-link" href="details.html">
-                                    <img class="product-img" src="assets/mock1.jpg" alt="Macbook Pro" />
-                                    <div class="product-info">
-                                        <span class="product-title">Macbook Pro 15'4</span>
-                                        <span class="product-description">Space Gray</span>
-                                        <div class="product-price-block">
-                                            <span class="price">$750.000</span>
-                                            <span class="discount">50% Off</span>
-                                        </div>
-                                        <div class="product-tax-policy">Incluye impuesto País y percepción AFIP</div>
-                                    </div>
-                                </a>
-                            </article>
-                            <article class="product-card">
-                                <a class="product-link" href="details.html">
-                                    <img class="product-img" src="assets/mock1.jpg" alt="Macbook Pro" />
-                                    <div class="product-info">
-                                        <span class="product-title">Macbook Pro 15'4</span>
-                                        <span class="product-description">Space Gray</span>
-                                        <div class="product-price-block">
-                                            <span class="price">$750.000</span>
-                                            <span class="discount">50% Off</span>
-                                        </div>
-                                        <div class="product-tax-policy">Incluye impuesto País y percepción AFIP</div>
-                                    </div>
-                                </a>
-                            </article>
-                            <article class="product-card">
-                                <a class="product-link" href="details.html">
-                                    <img class="product-img" src="assets/mock1.jpg" alt="Macbook Pro" />
-                                    <div class="product-info">
-                                        <span class="product-title">Macbook Pro 15'4</span>
-                                        <span class="product-description">Space Gray</span>
-                                        <div class="product-price-block">
-                                            <span class="price">$750.000</span>
-                                            <span class="discount">50% Off</span>
-                                        </div>
-                                        <div class="product-tax-policy">Incluye impuesto País y percepción AFIP</div>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
+                        <div class="product-container" id="offer-products"></div>
                     </div>
                 </div>
             </div>

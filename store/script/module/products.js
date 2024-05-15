@@ -19,3 +19,5 @@ const product5 = new Product(5, ['assets/mock1.jpg', 'assets/mock2.jpg'], 'Macbo
 const product6 = new Product(6, ['assets/mock1.jpg', 'assets/mock2.jpg'], 'Macbook Pro 10\'4', 'Space Gray', 3200.99, 60, 'Incluye impuesto País y percepción AFIP', ['Celeste', 'Negro']);
 
 const products = [product1, product2, product3, product4, product5, product6];
+
+export { products }

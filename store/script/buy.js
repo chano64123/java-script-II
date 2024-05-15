@@ -1,7 +1,9 @@
-const buySelector = document.getElementById('finalizar-compra')
+import { setCartProducts } from "./module/utilsProduct.js";
+import { printProductsCart, setTotalCart } from "./module/utilsProductCart.js";
 
+const buySelector = document.getElementById('finalizar-compra')
 buySelector.addEventListener('click', function () {
-  cartProducts = [];
-  localStorage.removeItem('cart')
-  printCartProducts(cartProducts)
+  setCartProducts([]);
+  printProductsCart([], 'cart-products');
+  setTotalCart([], 'total-price')
 })
