@@ -1,8 +1,7 @@
 import { getCartProducts, getFavoriteProducts, getIndexFromProductByIdAndColor, setCartProducts } from "./utilsProduct.js";
 
 const setTotalCart = (products, idSelectorTotal) => {
-  let totalPrice = 0;
-  products.forEach(product => (totalPrice += product.price * product.quantity));
+  const totalPrice = products.reduce((total, product) => total + product.price, 0);
   const totalPriceSelector = document.getElementById(idSelectorTotal);
   totalPriceSelector.textContent = totalPrice.toFixed(2);
 }
