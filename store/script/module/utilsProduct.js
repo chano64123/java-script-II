@@ -1,8 +1,14 @@
 import { KEY_LS_CART, KEY_LS_FAVORITES } from "./keysLocalStorage.js"
 import { products } from "./products.js"
 
+const orderAlphabetically = (a, b) => {
+  const titleA = a.title.toUpperCase();
+  const titleB = b.title.toUpperCase();
+  return titleA === titleB ? 0 : titleA > titleB ? 1 : -1;
+}
+
 const getProducts = () => {
-  return products;
+  return products.sort((a, b) => orderAlphabetically(a, b));
 }
 
 const getProductById = (products, id) => {
@@ -26,7 +32,8 @@ const removeProductByIdAndColor = (products, id, color) => {
 }
 
 const getCartProducts = () => {
-  return JSON.parse(localStorage.getItem(KEY_LS_CART)) ?? [];
+  let cartProducts = JSON.parse(localStorage.getItem(KEY_LS_CART)) ?? [];
+  return cartProducts.sort((a, b) => orderAlphabetically(a, b));
 }
 
 const setCartProducts = (cartProducts) => {
@@ -34,7 +41,8 @@ const setCartProducts = (cartProducts) => {
 }
 
 const getFavoriteProducts = () => {
-  return JSON.parse(localStorage.getItem(KEY_LS_FAVORITES)) ?? [];
+  const favoriteProducts = JSON.parse(localStorage.getItem(KEY_LS_FAVORITES)) ?? [];
+  return favoriteProducts.sort((a, b) => orderAlphabetically(a, b));
 }
 
 const setFavoriteProducts = (favoriteProducts) => {

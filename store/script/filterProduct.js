@@ -1,6 +1,7 @@
-import { products } from "./module/products.js";
+import { getProducts } from "./module/utilsProduct.js";
 import { printProductsCards } from "./module/utilsProductCard.js";
 
+const products = getProducts();
 const searchSelector = document.getElementById('inputSearch');
 
 searchSelector.addEventListener("keyup", event => captureText(event))
