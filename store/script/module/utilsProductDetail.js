@@ -1,4 +1,5 @@
 import { getProductById, getIndexFromProductByIdAndColor, getCartProducts, setCartProducts, getProducts } from "./utilsProduct.js";
+import { ICONS_SA, showToast } from "./utilsSweetAlert.js";
 
 const products = await getProducts();
 
@@ -37,14 +38,14 @@ const saveProduct = (event) => {
   const productIndex = getIndexFromProductByIdAndColor(cartProducts, buy.id, buy.color);
 
   if (productIndex !== -1) {
+    showToast('El producto ya existe en el carrito, se agrego la cantidad ingresada!', ICONS_SA.SUCCESS)
     cartProducts[productIndex].quantity += buy.quantity;
   } else {
+    showToast('Producto agregado correctamente al carrito!', ICONS_SA.SUCCESS)
     cartProducts.push(buy);
   }
 
   setCartProducts(cartProducts)
-  //TODO: cambiar por sweet alert
-  alert('Producto agregado al carrito correctamente');
 }
 
 const getProductImageTemplate = (product) => {

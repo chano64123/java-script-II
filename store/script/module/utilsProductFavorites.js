@@ -1,4 +1,5 @@
 import { getCartProducts, getProductByIdAndColor, getIndexFromProductByIdAndColor, removeProductByIdAndColor, getFavoriteProducts, setFavoriteProducts } from "./utilsProduct.js";
+import { ICONS_SA, showToast } from "./utilsSweetAlert.js";
 
 const manageFavoriteView = (element, addedToFavorites) => {
   if (addedToFavorites) {
@@ -21,9 +22,11 @@ const addProductTofavorites = (element) => {
   const product = getProductByIdAndColor(cartProducts, productId, productColor);
 
   if (addedToFavorites) {
-    favoriteProducts.push(product)
+    favoriteProducts.push(product);
+    showToast('Producto agregado a favoritos', ICONS_SA.INFO);
   } else {
     favoriteProducts = removeProductByIdAndColor(favoriteProducts, productId, productColor);
+    showToast('Producto removido de favoritos', ICONS_SA.INFO);
   }
   setFavoriteProducts(favoriteProducts)
   manageFavoriteView(element, addedToFavorites);

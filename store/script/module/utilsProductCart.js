@@ -1,4 +1,5 @@
 import { getCartProducts, getFavoriteProducts, getIndexFromProductByIdAndColor, setCartProducts } from "./utilsProduct.js";
+import { ICONS_SA, showAlert, showToast } from "./utilsSweetAlert.js";
 
 const setTotalCart = (products, idSelectorTotal) => {
   const totalPrice = products.reduce((total, product) => total + product.price, 0);
@@ -21,7 +22,7 @@ const getCartProductTemplate = (product, isFavorite) => {
           <span class="cart-product-title">${product.title}</span>
           <span class="cart-product-color">${product.color}</span>
           <span class="cart-product-description">${product.description}</span>
-          <input id="${product.id}" data-color="${product.color}" type="number" min="1" value="${product.quantity}" class="cart-product-quantity" onchange="changeProductQuantity(event)" />
+          <input id="${product.id}" data-color="${product.color}" type="number" min="1" max="10" value="${product.quantity}" class="cart-product-quantity" onchange="changeProductQuantity(event)" />
       </div>
       <div class="price">S/${product.price.toFixed(2)}</div>
       <div class="cart-product-favorite">
@@ -61,6 +62,14 @@ const changeProductQuantity = (event) => {
 
   setCartProducts(cartProducts)
   setTotalCart(cartProducts, 'total-price');
+  showToast(`Nueva cantidad para <strong>${product.title}</strong>: ${newQuantity} unidad(es).`, ICONS_SA.INFO);
 }
 
-export { setTotalCart, getMessageNoCartProducts, getCartProductTemplate, printProductsCart, changeProductQuantity }
+const finalizePurchase = () => {
+  setCartProducts([]);
+  printProductsCart([], 'cart-products');
+  setTotalCart([], 'total-price');
+  showAlert('Pedido exitoso!', 'Recibiras información sobre el estado en tu pedido por correo electronico', ICONS_SA.SUCCESS);
+}
+
+export { setTotalCart, getMessageNoCartProducts, getCartProductTemplate, printProductsCart, changeProductQuantity, finalizePurchase }
