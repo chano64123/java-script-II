@@ -1,7 +1,9 @@
-import { optionsSocial, optionsNav, optionsFooter } from "./dataLayout.js";
+import { startSession, closeSession } from "./session.js";
+import { getLayoutOptionsAsync } from "../../service/layoutService.js";
+
+const layoutOptions = await getLayoutOptionsAsync();
 
 const getSocialOptions = (isOnline, optionsSocial) => {
-
   let optionsNodeSocial = []
   const optionsIgnored = ['icon-start-session'];
 
@@ -20,7 +22,12 @@ const getSocialOptions = (isOnline, optionsSocial) => {
     anchor.href = option.linkTo;
 
     if (option.callBack) {
-      anchor.onclick = option.callBack;
+      const callbackFunction = window[option.callBack];
+      if (typeof callbackFunction === 'function') {
+        anchor.onclick = callbackFunction;
+      } else {
+        console.error(`La función ${option.callBack} no está definida.`);
+      }
     }
 
     const icon = document.createElement("i");
@@ -84,7 +91,7 @@ const printSocialOptions = (isOnline, idSelector) => {
   const socialSelector = document.getElementById(idSelector);
 
   socialSelector.innerHTML = '';
-  const optionsNodeSocial = getSocialOptions(isOnline, optionsSocial);
+  const optionsNodeSocial = getSocialOptions(isOnline, layoutOptions.social);
   for (const option of optionsNodeSocial) {
     socialSelector.appendChild(option);
   }
@@ -92,7 +99,7 @@ const printSocialOptions = (isOnline, idSelector) => {
 
 const printNavOptions = (idSelector) => {
   const navSelector = document.getElementById(idSelector);
-  const optionsNodeNav = getNavOptions(optionsNav);
+  const optionsNodeNav = getNavOptions(layoutOptions.nav);
   for (const option of optionsNodeNav) {
     navSelector.appendChild(option);
   }
@@ -100,10 +107,13 @@ const printNavOptions = (idSelector) => {
 
 const printFooterOptions = (idSelector) => {
   const footerSelector = document.getElementById(idSelector);
-  const optionsNodeFooter = getFooterOptions(optionsFooter);
+  const optionsNodeFooter = getFooterOptions(layoutOptions.footer.options);
   for (const option of optionsNodeFooter) {
     footerSelector.appendChild(option);
   }
 }
+
+window.startSession = startSession;
+window.closeSession = closeSession;
 
 export { printSocialOptions, printNavOptions, printFooterOptions }

@@ -1,0 +1,102 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "images": [
+                "assets/mock1.jpg",
+                "assets/mock2.jpg"
+            ],
+            "title": "Macbook Pro 15'4",
+            "description": "Space Gray",
+            "price": 1500,
+            "discount": 60,
+            "observation": "Incluye impuesto País y percepción AFIP",
+            "colors": [
+                "Rosa",
+                "Negro",
+                "Rosa"
+            ]
+        },
+        {
+            "id": 2,
+            "images": [
+                "assets/mock1.jpg",
+                "assets/mock2.jpg"
+            ],
+            "title": "Macbook Pro 14'4",
+            "description": "Space Gray",
+            "price": 2300,
+            "discount": 60,
+            "observation": "Incluye impuesto País y percepción AFIP",
+            "colors": [
+                "Gris",
+                "Amarillo"
+            ]
+        },
+        {
+            "id": 3,
+            "images": [
+                "assets/mock1.jpg",
+                "assets/mock2.jpg"
+            ],
+            "title": "Macbook Pro 13'4",
+            "description": "Space Gray",
+            "price": 1800,
+            "discount": 60,
+            "observation": "Incluye impuesto País y percepción AFIP",
+            "colors": [
+                "Blanco",
+                "Azul",
+                "Gris"
+            ]
+        },
+        {
+            "id": 4,
+            "images": [
+                "assets/mock1.jpg",
+                "assets/mock2.jpg"
+            ],
+            "title": "Macbook Pro 12'4",
+            "description": "Space Gray",
+            "price": 2500,
+            "discount": 60,
+            "observation": "Incluye impuesto País y percepción AFIP",
+            "colors": [
+                "Morado",
+                "Negro"
+            ]
+        },
+        {
+            "id": 5,
+            "images": [
+                "assets/mock1.jpg",
+                "assets/mock2.jpg"
+            ],
+            "title": "Macbook Pro 11'4",
+            "description": "Space Gray",
+            "price": 2199.99,
+            "discount": 60,
+            "observation": "Incluye impuesto País y percepción AFIP",
+            "colors": [
+                "Guinda",
+                "Cyan"
+            ]
+        },
+        {
+            "id": 6,
+            "images": [
+                "assets/mock1.jpg",
+                "assets/mock2.jpg"
+            ],
+            "title": "Macbook Pro 10'4",
+            "description": "Space Gray",
+            "price": 3200.99,
+            "discount": 60,
+            "observation": "Incluye impuesto País y percepción AFIP",
+            "colors": [
+                "Celeste",
+                "Negro"
+            ]
+        }
+    ]
+}

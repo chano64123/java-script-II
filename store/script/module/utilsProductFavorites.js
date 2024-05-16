@@ -20,10 +20,6 @@ const addProductTofavorites = (element) => {
   const productColor = element.dataset.color;
   const product = getProductByIdAndColor(cartProducts, productId, productColor);
 
-  console.log(productId);
-  console.log(productColor);
-  console.log(product);
-
   if (addedToFavorites) {
     favoriteProducts.push(product)
   } else {

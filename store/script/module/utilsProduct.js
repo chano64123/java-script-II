@@ -1,5 +1,5 @@
 import { KEY_LS_CART, KEY_LS_FAVORITES } from "./keysLocalStorage.js"
-import { products } from "./products.js"
+import { getProductsAsync } from "../../service/productService.js";
 
 const orderAlphabetically = (a, b) => {
   const titleA = a.title.toUpperCase();
@@ -7,8 +7,10 @@ const orderAlphabetically = (a, b) => {
   return titleA === titleB ? 0 : titleA > titleB ? 1 : -1;
 }
 
-const getProducts = () => {
-  return products.sort((a, b) => orderAlphabetically(a, b));
+const getProducts = async () => {
+  const productos = await getProductsAsync();
+  return productos.sort((a, b) => orderAlphabetically(a, b));
+  //return products.sort((a, b) => orderAlphabetically(a, b));
 }
 
 const getProductById = (products, id) => {

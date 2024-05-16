@@ -1,6 +1,6 @@
 import { getProductById, getIndexFromProductByIdAndColor, getCartProducts, setCartProducts, getProducts } from "./utilsProduct.js";
 
-const products = getProducts();
+const products = await getProducts();
 
 const changeMini = (event, idImageSelector) => {
   const route = event.target.src;
