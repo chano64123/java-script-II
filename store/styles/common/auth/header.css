@@ -1,0 +1,9 @@
+header {
+    background-color: #ff4a4a;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 100px;
+}

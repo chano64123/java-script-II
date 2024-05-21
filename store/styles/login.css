@@ -1,0 +1,25 @@
+.forgot-password {
+    text-align: right;
+}
+
+.forgot-password a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.signup {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup p {
+    margin: 0;
+    font-size: 14px;
+    color: #666666;
+}
+
