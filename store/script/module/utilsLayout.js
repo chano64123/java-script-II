@@ -113,7 +113,11 @@ const printFooterOptions = (idSelector) => {
   }
 }
 
-window.startSession = startSession;
-window.closeSession = closeSession;
+try {
+  window.startSession = startSession;
+  window.closeSession = closeSession;
+} catch (error) {
+  console.warn(error);
+}
 
 export { printSocialOptions, printNavOptions, printFooterOptions }

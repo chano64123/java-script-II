@@ -4,7 +4,11 @@ import { getCartProducts } from "./module/utilsProduct.js";
 
 const cartProducts = getCartProducts();
 
-window.changeProductQuantity = changeProductQuantity
-window.addProductTofavorites = addProductTofavorites
+try {
+  window.changeProductQuantity = changeProductQuantity
+  window.addProductTofavorites = addProductTofavorites
+} catch (error) {
+  console.warn(error);
+}
 
 printProductsCart(cartProducts, 'cart-products');

@@ -3,6 +3,10 @@ import { printProductsFavorites, addProductTofavorites } from "./module/utilsPro
 
 const favoritesProducts = getFavoriteProducts();
 
-window.addProductTofavorites = addProductTofavorites;
+try {
+  window.addProductTofavorites = addProductTofavorites;
+} catch (error) {
+  console.warn(error);
+}
 
 printProductsFavorites(favoritesProducts, 'favorite-products');

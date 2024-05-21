@@ -18,9 +18,14 @@ const printDetails = (productId) => {
   productCheckoutSection.innerHTML = getProductCheckoutTemplate(product);
 }
 
-window.changeMini = changeMini;
-window.changeSubtotal = changeSubtotal;
-window.saveProduct = saveProduct;
+try {
+  window.changeMini = changeMini;
+  window.changeSubtotal = changeSubtotal;
+  window.saveProduct = saveProduct;
+} catch (error) {
+  console.warn(error);
+}
+
 
 printDetails(id)
 printProductsCards(products, 'offer-products', 3)
