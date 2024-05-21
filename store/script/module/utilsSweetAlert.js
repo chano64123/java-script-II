@@ -6,12 +6,16 @@ const ICONS_SA = {
   QUESTION: 'question'
 }
 
-const showAlert = (title, text, icon) => {
+const showAlert = (title, text, icon, callback) => {
   Swal.fire({
     title,
     text,
     icon
-  });
+  }).then((result) => {
+    if (result.isConfirmed && callback) {
+      callback();
+    }
+  });;
 }
 
 const showToast = (title, icon) => {
