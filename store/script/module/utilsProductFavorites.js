@@ -1,5 +1,6 @@
+import { hasSession } from "./session.js";
 import { getCartProducts, getProductByIdAndColor, getIndexFromProductByIdAndColor, removeProductByIdAndColor, getFavoriteProducts, setFavoriteProducts } from "./utilsProduct.js";
-import { ICONS_SA, showToast } from "./utilsSweetAlert.js";
+import { ICONS_SA, showAlert, showToast } from "./utilsSweetAlert.js";
 
 const manageFavoriteView = (element, addedToFavorites) => {
   if (addedToFavorites) {
@@ -12,6 +13,11 @@ const manageFavoriteView = (element, addedToFavorites) => {
 }
 
 const addProductTofavorites = (element) => {
+  if (!hasSession()) {
+    showAlert('Aviso!!!', 'Tienes que iniciar sesion para poder agregar o remover productos de tus favoritos.', ICONS_SA.WARNING);
+    return;
+  }
+
   const cartProducts = getCartProducts();
   let favoriteProducts = getFavoriteProducts();
 
@@ -57,6 +63,11 @@ const getFavoriteProductTemplate = (product, isFavorite) => {
 }
 
 const printProductsFavorites = (products, idFavoriteProductsSelector) => {
+  if (!hasSession()) {
+    products = [];
+    showAlert('Aviso!!!', 'Tienes que iniciar sesion para poder ver los productos favoritos.', ICONS_SA.WARNING);
+  }
+
   const favoritesProducts = getFavoriteProducts();
   let templateProducts = '';
 

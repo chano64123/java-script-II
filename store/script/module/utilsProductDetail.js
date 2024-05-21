@@ -1,5 +1,6 @@
+import { hasSession } from "./session.js";
 import { getProductById, getIndexFromProductByIdAndColor, getCartProducts, setCartProducts, getProducts } from "./utilsProduct.js";
-import { ICONS_SA, showToast } from "./utilsSweetAlert.js";
+import { ICONS_SA, showAlert, showToast } from "./utilsSweetAlert.js";
 
 const products = await getProducts();
 
@@ -20,6 +21,11 @@ const changeSubtotal = (event, priceIdSelector) => {
 }
 
 const saveProduct = (event) => {
+  if (!hasSession()) {
+    showAlert('Aviso!!!', 'Tienes que iniciar sesion para poder agregar productos al carrito.', ICONS_SA.WARNING);
+    return;
+  }
+
   const productId = event.target.dataset.id;
   const product = getProductById(products, productId);
   const quantity = Number(document.querySelector('#quantity').value);

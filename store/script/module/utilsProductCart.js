@@ -1,3 +1,4 @@
+import { hasSession } from "./session.js";
 import { getCartProducts, getFavoriteProducts, getIndexFromProductByIdAndColor, setCartProducts } from "./utilsProduct.js";
 import { ICONS_SA, showAlert, showToast } from "./utilsSweetAlert.js";
 
@@ -33,6 +34,11 @@ const getCartProductTemplate = (product, isFavorite) => {
 }
 
 const printProductsCart = (products, idCartProductsSelector) => {
+  if (!hasSession()) {
+    products = [];
+    showAlert('Aviso!!!', 'Tienes que iniciar sesion para poder ver los productos del carrito.', ICONS_SA.WARNING);
+  }
+
   const favoritesProducts = getFavoriteProducts();
   let templateProducts = '';
 
