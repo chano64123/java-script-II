@@ -1,4 +1,5 @@
 import { IProfile } from "./data";
+import { Portfolio } from "./portfolio";
 
 const nombre: string = 'Jose Carlos';
 const edad: number = 24;
@@ -64,3 +65,28 @@ for (const [nombre, propiedad, tipo] of verificar) {
   console.log(`La propiedad "${nombre}" ${es} del tipo ${tipo}.`);
 }
 
+console.log("\nGenerics I");
+const names: string[] = ['Jose Carlos', 'Pedro', 'Alberto'];
+
+function getFirstElement<T>(array: T[]): T | undefined {
+  const [first] = array;
+  return first;
+}
+
+const firstPerson = getFirstElement(family);
+const firstName = getFirstElement(names);
+
+console.log('Primera persona', firstPerson);
+console.log('Primer nombre:', firstName);
+
+console.log("\nGenerics II");
+const portfolio = new Portfolio<number | string>();
+
+portfolio.addItem(100);
+portfolio.addItem('dólares');
+portfolio.addItem(50);
+portfolio.addItem('en efectivo');
+
+console.log('Todos los elementos:', portfolio.getAllItems());
+console.log('Suma de elementos numéricos:', portfolio.sumNumericItems());
+console.log('Texto concatenado:', portfolio.concatenateTextItems());
